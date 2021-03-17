@@ -1,34 +1,53 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import login from '../views/login.vue'
-
+import home from '../views/home.vue'
+import welcome from '../views/welcome.vue'
+import users from '../components/user/users.vue'
 Vue.use(VueRouter)
 
 const routes = [{
             path: '/',
-            name: 'login',
             component: login
         },
+        // 主页
         {
-            path: '/Home',
-            name: 'Home',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () =>
-                import ( /* webpackChunkName: "about" */ '../views/Home.vue'),
-            children: [{
-                    path: '/',
-                    redirect: 'userList'
+            path: '/home',
+            component: home,
+            redirect: '/welcome',
+            children: [
+                { path: '/welcome', component: welcome },
+                { path: '/users', component: users },
+                {
+                    path: '/roles',
+                    component: () =>
+                        import ('./../components/roles/roles.vue')
                 },
                 {
-                    path: 'userList',
+                    path: '/rights',
                     component: () =>
-                        import ('../components/userList.vue')
+                        import ('./../components/rights/rights.vue')
                 },
-
+                {
+                    path: '/categories',
+                    component: () =>
+                        import ('./../components/categories/categories.vue')
+                },
+                {
+                    path: '/orders',
+                    component: () =>
+                        import ('./../components/orders/orders.vue')
+                },
+                {
+                    path: '/reports',
+                    component: () =>
+                        import ('./../components/reports/reports.vue')
+                },
             ]
-        }
+        },
+        //权限
+
+
     ]
     //挂载路由导航守卫
 

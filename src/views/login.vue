@@ -73,7 +73,7 @@ export default {
      login(formName) {
       this.$refs[formName].validate((valid) => {
         // location:'http://192.168.1.29:3000';
-        console.log(this.logininfo.name);
+        // console.log(this.logininfo.name);
         if (valid) {
           this.axios
             .post("/api/login", {
@@ -81,7 +81,7 @@ export default {
               password: this.logininfo.pwd,
             })
             .then((res) => {
-              console.log(res);
+              // console.log(res);
               if (res.meta.msg === '用户名不存在') {
              
               this.$message({
