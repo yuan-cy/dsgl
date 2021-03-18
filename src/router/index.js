@@ -24,20 +24,50 @@ const routes = [
     children:[
       {
         path:'/',
-        redirect:'userList'
+        redirect:'welcom'
       },
       {
-        path:'userList',
-        component:()=>import('./../components/userList.vue')
+        path:'welcom',
+        component:()=>import('./../components/welcom.vue')
       },
       {
-        path:'addUser',
-        component:()=>import('./../components/addUser.vue')
+        path:'users',
+        component:()=>import('./../components/users.vue')
       },
       {
-        path:'removeUser',
-        component:()=>import('./../components/removeUser.vue')
+        path:'rights',
+        component:()=>import('./../components/power/Rights.vue')
       },
+      {
+        path:'roles',
+        component:()=>import('./../components/power/Roles.vue')
+      },
+      {
+        path:'categories',
+        component:()=>import('./../components/goods/Cate.vue')
+      },
+      {
+        path:'params',
+        component:()=>import('./../components/goods/Params.vue')
+      },
+      {
+        path:'goods',
+        component:()=>import('./../components/goods/Goods.vue')
+      }, 
+      {
+        path:'add',
+        component:()=>import('./../components/goods/add.vue')
+      }, 
+      {
+        path:'reports',
+        component:()=>import('./../components/report/Reports.vue')
+      },
+      {
+        path:'orders',
+        component:()=>import('./../components/orders/orders.vue')
+      }
+
+     
     ]
   }
 ]

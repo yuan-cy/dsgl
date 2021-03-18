@@ -67,7 +67,7 @@
               username: this.loginInfo.name,
               password: this.loginInfo.pwd
             }).then(res => {
-              console.log(res)
+              // console.log(res)
               if (res.data.meta.msg == '登录成功') {
                 this.$message({
                   message: '恭喜你，登录成功',
